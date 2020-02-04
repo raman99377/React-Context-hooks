@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ArticleContext } from "../context/aricleContext";
 
 const AddArticle = () => {
+  const { dispatch } = useContext(ArticleContext);
   const [article, setArticle] = useState();
 
   const handleArticleData = e => {
@@ -11,7 +13,7 @@ const AddArticle = () => {
   };
   const addNewArticle = e => {
     e.preventDefault();
-    // The logic will come later
+    dispatch({ type: "ADD_ARTICLE", article });
   };
   return (
     <form onSubmit={addNewArticle} className="add-article">

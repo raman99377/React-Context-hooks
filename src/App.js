@@ -1,11 +1,15 @@
 import React from "react";
+import ArticleProvider from "./context/aricleContext";
+import Articles from "./container/Articles";
+import AddArticle from "./container/AddArticle";
 import "./styles.css";
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    //Here we wrap the components with the Provider
+    <ArticleProvider>
+      <Articles />
+      <AddArticle />
+    </ArticleProvider>
   );
 }
